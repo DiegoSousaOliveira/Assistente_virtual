@@ -1,4 +1,5 @@
 # settings of python
+__pycache__
 .mypy_cache
 
 # settings vs code
