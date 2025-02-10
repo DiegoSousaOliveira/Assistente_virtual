@@ -1,0 +1,11 @@
+# settings of python
+.mypy_cache
+
+# settings vs code
+.vscode
+
+# dir de test
+tests
+
+# venv
+venv
