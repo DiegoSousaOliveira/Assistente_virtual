@@ -31,4 +31,4 @@ Essa assistente é capaz de exexuta comandos e responder a perguntas. Eu utilize
  - Crie um ambiente virtual para baixa as dependencias.
  - Ative o ambiente virtual.
  - digite ``pip install requirements.txt`` no termial do projeto.
- - executo o arquivo 
+ - executo o arquivo main.py assim: ``python main.py``
