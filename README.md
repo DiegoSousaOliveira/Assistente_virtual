@@ -2,13 +2,13 @@
 Essa assistente é capaz de exexuta comandos e responder a perguntas. Eu utilizeu um llm da meta chamado Llama 3.1 que é responsavel por responder as perguntas.
 
 ## 🛠️ Tecnologias Utilizadas
- • Flet: Criação de uma interface gráfica amigável para interação.
- • Pyttsx3: Conversão de texto em fala.
- • Speech Recognition: Reconhecimento de voz do usuário.
- • Ollama: Para integrar o modelo Llama 3.1 (4B) da Meta, que responde às 
+ - Flet: Criação de uma interface gráfica amigável para interação.
+ - Pyttsx3: Conversão de texto em fala.
+ - Speech Recognition: Reconhecimento de voz do usuário.
+ - Ollama: Para integrar o modelo Llama 3.1 (4B) da Meta, que responde às 
  perguntas.
- • Pandas: Manipulação e análise de dados.
- • Sklearn: Desenvolvimento e treinamento do modelo de classificação.
+ - Pandas: Manipulação e análise de dados.
+ - Sklearn: Desenvolvimento e treinamento do modelo de classificação.
 
 ## 🧠 Como Funciona?
  1. Treinei um modelo de aprendizado de máquina para classificar frases 
