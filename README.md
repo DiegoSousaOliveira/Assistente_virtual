@@ -26,4 +26,9 @@ Essa assistente é capaz de exexuta comandos e responder a perguntas. Eu utilize
  - Ter o modelo llama 3.1 instalado
 
 ## Etapas para a execução:
- - 
+ - Baixe o projeto em um arquivo em seu computador.
+ - Entre nesse proejto pelo terminal.
+ - Crie um ambiente virtual para baixa as dependencias.
+ - Ative o ambiente virtual.
+ - digite ``pip install requirements.txt`` no termial do projeto.
+ - executo o arquivo 
