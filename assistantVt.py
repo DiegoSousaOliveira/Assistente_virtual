@@ -14,6 +14,7 @@ from ollama import AsyncClient
 
 # Módulos locais/personalizados
 from clasificacion import classify_text
+from request_placa import send_command
 
 
 class VirtualAssistant(ft.Column):
@@ -121,11 +122,11 @@ class VirtualAssistant(ft.Column):
         hour = datetime.now().hour
 
         if 6 <= hour < 12:
-            self.speak("Bom Dia mestre!")
+            self.speak("Bom Dia!")
         elif hour < 18:
-            self.speak("Boa tarde mestre!")
+            self.speak("Boa tarde!")
         else:
-            self.speak("Boa Noite mestre!")
+            self.speak("Boa Noite!")
 
         self.speak('Maria a sua disposição! em que posso ajuda-lo!')
 
@@ -138,10 +139,11 @@ class VirtualAssistant(ft.Column):
 
         try:
             command = r.recognize_google(audio, language='pt-br')
+            print(command)
             return command
         
         except Exception as e:
-            #self.speak('Não consegui entender! tem como repetir, por favor')
+            self.speak('Não consegui entender! tem como repetir, por favor')
             return 'None'
     
     def open_you_tube(self):
@@ -158,6 +160,15 @@ class VirtualAssistant(ft.Column):
     def open_chrome(self):
         os.system('"C:/Program Files/Google/Chrome/Application/chrome.exe"')
 
+    def turn_on_led(self):
+        send_command('LED_ON')
+
+    def turn_off_led(self):
+        send_command('LED_OFF')
+
+    def led_matrix_animation(self):
+        send_command('MATRIZ_LED_ANIMATION_ON')
+    
     def main(self):
         self.speak_greeting()
 
@@ -186,8 +197,17 @@ class VirtualAssistant(ft.Column):
                 elif 'abrir vscode' in command or 'abrir vs code' in command:
                     self.open_vs_code()
 
-                elif 'desligar' in command or 'sair' in command:
-                    self.speak('adeus mestre!.')
+                elif 'ligar led' == command:
+                    self.turn_on_led()
+                
+                elif 'desligar led' == command:
+                    self.turn_off_led()
+
+                elif 'animação' in command:
+                    self.led_matrix_animation()
+
+                elif 'maria desligar' in command or 'maria sair' in command:
+                    self.speak('adeus!.')
                     self.status_window = False
                     self.page.window.close()
                     break
