@@ -168,7 +168,13 @@ class VirtualAssistant(ft.Column):
 
     def led_matrix_animation(self):
         send_command('MATRIZ_LED_ANIMATION_ON')
-    
+
+    def son(self):
+        send_command('BUZZER_ON')
+
+    def alerta(self):
+        send_command('Alert 1')
+
     def main(self):
         self.speak_greeting()
 
@@ -206,7 +212,13 @@ class VirtualAssistant(ft.Column):
                 elif 'animação' in command:
                     self.led_matrix_animation()
 
-                elif 'maria desligar' in command or 'maria sair' in command:
+                elif 'som' in command:
+                    self.son()
+
+                elif 'alerta' in command:
+                    self.alerta()
+
+                elif 'desligar' in command or 'sair' in command:
                     self.speak('adeus!.')
                     self.status_window = False
                     self.page.window.close()
